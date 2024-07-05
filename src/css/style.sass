@@ -1,0 +1,391 @@
+@import "normalize"
+@import "reset"
+$main-color-orange: #ff8050
+$main-color-blue: #3e8dff
+$main-color-gray: #949494
+
+@mixin Rectagle
+    position: absolute
+    border-radius: 100px
+    width: 578px
+    height: 201px
+    box-shadow: 6px 5px 12px 0 rgba(0, 0, 0, 0.25)
+
+*
+    box-sizing: border-box
+
+//Шрифты -------
+@font-face
+  font-display: swap
+  font-family: 'Halvar-light'
+  font-style: normal
+  font-weight: normal
+  src: url('../fonts/HalvarBreit-Light.woff2') format('woff2')
+
+@font-face
+  font-display: swap
+  font-family: 'Halvar-regular'
+  font-style: normal
+  font-weight: normal
+  src: url('../fonts/HalvarBreit-Regular.woff2') format('woff2')
+
+@font-face
+  font-display: swap
+  font-family: 'Halvar-medium'
+  font-style: normal
+  font-weight: normal
+  src: url('../fonts/HalvarBreit-Medium.woff2') format('woff2')
+
+@font-face
+  font-display: swap
+  font-family: 'Halvar-bold'
+  font-style: normal
+  font-weight: normal
+  src: url('../fonts/HalvarBreit-Bold.woff2') format('woff2')
+
+html
+    font-family: 'Halvar-regular'
+    font-weight: normal
+    scroll-behavior: smooth
+
+.light
+  font-family: "Halvar-light"
+  font-weight: normal
+
+.container
+  position: relative
+  max-width: 1140px
+  margin: 0 auto
+
+.main-section
+    min-height: 800px
+    overflow: hidden
+    position: relative
+    background-color: #eeeeee
+    padding-top: 16px
+    //background-image: linear-gradient(0deg, #FFFFFFFF 0%, #073AFF00 10%),radial-gradient(50% 50% at 120% 0%, #E3A7FFFF 1%, #00FFFF00 100%),linear-gradient(113deg, #FFFFFFFF 2%, #C6E7FFFF 53%, #E3A7FFFF 89%)
+    &__nav-container
+        display: flex
+        flex-direction: row
+        justify-content: space-between
+        height: 69px
+        align-items: center
+        margin-bottom: 84px
+    &__nav-block
+        display: flex
+        justify-content: center // Центрирование кнопок по горизонтали
+        align-items: center // Центрирование кнопок по вертикали
+        position: relative
+        text-align: center
+        border-radius: 44px
+        width: 536px
+        height: 65px
+        box-shadow: 0 6px 19px 0 rgba(0, 0, 0, 0.25)
+        background: #fff
+    &__first-elipse
+      position: absolute
+      left: 1040px
+    &__second-elipse
+      position: absolute
+      left: 630px
+      top: 280px
+    &__three-elipse
+      position: absolute
+      left: -10px
+    &__four-elipse
+      position: absolute
+      filter: blur(3px)
+      left: 960px
+      top: 380px
+
+.image-box
+    position: relative
+    img
+        position: absolute
+        height: 630px
+        z-index: 5
+    &__rectangle-blue
+        @include Rectagle
+        top: 125px
+        left: -130px
+        background-color: $main-color-blue
+        transform: rotate(-74deg)
+        z-index: 3
+    &__rectangle-orange
+        @include Rectagle
+        top: 150px
+        left: -60px
+        background-color: $main-color-orange
+        transform: rotate(-58deg)
+        z-index: 2
+    &__rectangle-gray
+        @include Rectagle
+        top: 210px
+        left: 10px
+        background-color: $main-color-gray
+        transform: rotate(-35deg)
+        z-index: 1
+
+.buttons
+    display: flex
+    height: 46px
+    &__main-btn
+        font-family: "Halvar-regular"
+        font-weight: normal
+        margin-right: 10px
+        width: 166px
+        height: 43px
+        background: linear-gradient(26deg, $main-color-blue 0%, $main-color-orange 100%)
+        box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25)
+        border-radius: 14px
+        border: none
+        font-size: 16px
+        color: white
+    &__icon-btn
+       display: inline-flex
+       justify-content: start
+       align-items: center
+       img
+           margin-right: 2px
+    &__text
+        font-size: 20px
+        font-family: "Halvar-bold"
+        font-weight: normal
+
+.nav-menu
+    &__list
+        display: flex
+        flex-direction: row
+        list-style: none
+    &__list-item
+        margin-right: 59px
+        font-size: 20px
+        &:last-child
+            margin-right: 0
+        a
+          text-decoration: none
+          color: black
+
+
+.first-feeling
+  display: flex
+  position: relative
+
+.icons
+    display: inline-flex
+    flex-direction: row
+    justify-content: space-between
+    &__item
+        width: 32px
+        height: 32px
+        border-radius: 100px
+        box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.25)
+
+.description-box
+    position: absolute
+    top: 100px
+    left: 780px
+    z-index: 6
+    max-width: 335px
+    min-height: 234px
+    display: inline-flex
+    flex-direction: column
+    justify-content: space-around
+    &__text
+        font-size: 16px
+    &__icons-box
+      width: 166px
+      height: 33px
+
+.title
+    font-family: "Halvar-medium"
+    font-weight: normal
+    font-size: 62px
+    position: relative
+    text-shadow: 2px 3px 5px rgba(0, 0, 0, 0.12)
+
+.gradient
+    background: linear-gradient(26deg, $main-color-blue 0%, $main-color-orange 100%)
+    background-clip: text
+    -webkit-background-clip: text
+    -webkit-text-fill-color: transparent
+
+header
+    font-size: 60px
+
+.action-box
+    display: flex
+    justify-content: space-between
+    align-items: flex-end
+
+
+.second-section
+  min-height: 700px
+  overflow: hidden
+  position: relative
+  display: flex
+  justify-content: center
+  &__container
+    padding-top: 32px
+    position: relative
+  &__block
+    display: flex
+    justify-content: center
+    align-items: center
+    position: relative
+    text-align: center
+    border-radius: 44px
+    width: 360px
+    height: 88px
+    box-shadow: 0 6px 19px 0 rgba(0, 0, 0, 0.25)
+    background: #fff
+    left: 390px
+    &-title
+      font-size: 40px
+      display: flex
+      justify-content: center
+      position: absolute
+      top: 50%
+      left: 50%
+      transform: translate(-50%, -50%)
+      background-color: white
+      color: black
+  &__cards-box
+    position: relative
+    display: flex
+    margin-bottom: 81px
+    top: 35px
+  &__cards-item
+    margin-right: 30px
+    box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.25)
+    &:last-child
+      margin-right: 0
+
+  &__icons-box
+    display: flex
+    justify-content: space-around
+  &__first-elipse
+      position: absolute
+      top: 110px
+      left: 1050px
+      z-index: -1
+  &__second-elipse
+      position: absolute
+      top: 368px
+      left: -69px
+      z-index: -1
+
+.icons-item
+  display: flex
+  align-items: center
+  &:last-child
+    margin-right: 0
+  &__img
+    margin-right: 20px
+  &__text
+    font-size: 15px
+
+.big-font
+  font-family: Halvar-bold
+  font-size: 40px
+
+.item1
+    background: $main-color-blue
+.item2
+    background: $main-color-orange
+.item3
+    background: $main-color-gray
+
+.cards-item
+  display: flex
+  align-items: flex-end
+  position: relative
+  border-radius: 45px
+  width: 360px
+  height: 360px
+  &__img
+    display: flex
+    width: 360px
+  &__text
+    font-family: "Halvar-medium"
+    font-weight: normal
+    font-size: 36px
+    justify-content: center
+    text-align: center
+    position: relative
+    top: -260px
+    right: 265px
+
+.text1
+  color: white
+  text-shadow: 2px 3px 5px rgba(0, 0, 0, 0.25)
+.text2
+  z-index: 1
+  right: 325px
+  color: white
+  text-shadow: 2px 3px 5px rgba(0, 0, 0, 0.25)
+.text3
+  right: 275px
+  color: white
+  text-shadow: 2px 3px 5px rgba(0, 0, 0, 0.25)
+
+.third-section
+    position: relative
+    min-height: 700px
+    overflow: hidden
+    background-color: #eeeeee
+    z-index: 0
+    &__container
+      display: flex
+      flex-direction: row
+      align-items: center
+      justify-content: space-evenly
+      padding-left: 167px
+      padding-top: 50px
+    &__right-wrapper
+      max-width: 465px
+    &__right-title
+      margin-bottom: 20px
+    &__text
+      margin-bottom: 20px
+      font-size: 20px
+    &__left-title
+      margin-right: 180px
+    &__first-elipse
+      position: absolute
+      left: 490px
+      top: 120px
+      z-index: -1
+    &__second-elipse
+      position: absolute
+      left: -495px
+      top: 303px
+      z-index: -1
+      filter: blur(4px)
+    &__three-elipse
+      position: absolute
+      left: 1010px
+      top: 570px
+      z-index: -1
+
+.footer
+  &__container
+    min-height: 272px
+    display: flex
+    align-items: center
+    justify-content: flex-end
+  &__icons-box
+    width: 166px
+    height: 33px
+  &__title
+    font-size: 64px
+    margin-bottom: 18px
+  &__img
+    position: absolute
+    left: -250px
+    bottom: 0
+
+
+
+
+
